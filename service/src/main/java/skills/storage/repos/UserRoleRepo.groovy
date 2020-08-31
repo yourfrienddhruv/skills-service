@@ -62,4 +62,6 @@ interface UserRoleRepo extends CrudRepository<UserRole, Integer> {
     boolean existsByUserIdAndRoleName(String userId, RoleName roleName)
 
     int countByRoleName(RoleName roleName)
+
+    int countByProjectId(String projectId)
 }
