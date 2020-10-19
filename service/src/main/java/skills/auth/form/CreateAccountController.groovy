@@ -124,6 +124,9 @@ class CreateAccountController {
         if (clientRegistrationRepository && oAuth2ProviderProperties?.registration) {
             clientRegistrationRepository.iterator().each { ClientRegistration clientRegistration ->
                 skills.controller.result.model.OAuth2Provider oAuth2Provider = oAuth2ProviderProperties.registration.get(clientRegistration.registrationId)
+                if (!oAuth2Provider) {
+                    oAuth2Provider = new skills.controller.result.model.OAuth2Provider()
+                }
                 oAuth2Provider.registrationId = oAuth2Provider.registrationId ?: clientRegistration.registrationId
                 oAuth2Provider.clientName = oAuth2Provider.clientName ?: clientRegistration.clientName
                 providers.add(oAuth2Provider)
