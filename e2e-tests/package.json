@@ -16,7 +16,7 @@
     "cy:open:dev:postgres": "TZ=UTC cypress open --config baseUrl=http://localhost:8082 --env db=postgres",
     "cy:run": "TZ=UTC npm run licenseCheck && cypress run",
     "cy:run:postgres": "TZ=UTC npm run licenseCheck && cypress run --env db=postgres",
-    "cy:run:dev": "TZ=UTC cypress run --config baseUrl=http://localhost:8082 --spec cypress/integration/metrics/skillMetrics_spec.js",
+    "cy:run:dev": "TZ=UTC cypress run --config baseUrl=http://localhost:8082 --spec cypress/integration/metrics/**.js",
     "cy:run:dev:postgres": "TZ=UTC cypress run --config baseUrl=http://localhost:8082 --env db=postgres",
     "cy:verify": "cypress verify",
     "backend:start": "java -Dspring.config.location=classpath:/application.yml,file:serverConfigs/backend_application.properties -jar ../service/target/skills-service-*.jar",
@@ -53,7 +53,7 @@
   },
   "devDependencies": {
     "@bahmutov/print-env": "2.1.2",
-    "cypress": "5.2.0",
+    "cypress": "5.4.0",
     "cypress-file-upload": "4.1.1",
     "cypress-image-snapshot": "3.1.1",
     "eslint": "7.9.0",
